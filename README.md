@@ -4,19 +4,21 @@ Predictive Analytics course project for the Kaggle Santander Customer
 Satisfaction competition. The target is `TARGET=1`, dissatisfied customers, and
 the evaluation metric is ROC AUC.
 
+Competition: https://www.kaggle.com/c/santander-customer-satisfaction
+
 ## Final Result
 
 Final model: **Stacked Ensemble + Rank Average + 4-rule post-processing**
 
 | Model | Private AUC | Public AUC | OOF / Validation AUC | Notes |
 |---|---:|---:|---:|---|
-| Final: Stacked Ensemble + Rank Avg + 4-rule | 0.82642 | 0.84030 | 0.84045 | OOF inherited from Austin's base stacking; no separate CV was run for the post-hoc rank averaging and 4-rule test-prediction transformation |
+| Final: Stacked Ensemble + Rank Avg + 4-rule | 0.82642 | 0.84030 | 0.84045 | OOF AUC shown is from the base Stacked Ensemble component (0.84045). The rank averaging and 4-rule post-processing were applied to test predictions only; no additional CV was run for these layers. Private AUC improvement (+0.00036) confirms generalization on held-out data |
 | Stacked Ensemble | 0.82606 | 0.84001 | 0.84045 | XGBoost + LightGBM + CatBoost with logistic-regression stacking |
 | XGBoost FE + 4-rule | 0.82568 | 0.83937 | 0.837924 | Activity/var38 FE plus validated 4-rule |
 | LightGBM FE | 0.82392 | 0.83777 | 0.83825 | Activity/var38 FE |
 | Base LightGBM | 0.82311 | 0.83706 | 0.83749 | Baseline tree model |
 | Random Forest | 0.81883 | 0.80502 | 0.82093 | Baseline |
-| Neural Network with Dropout and mini-batches | 0.80214 | 0.81852 | 0.81390 | Two hidden layers, 0.5 dropout, learning rate 0.00005, 10:1 class weighting, 100 epochs, batch size 50; removed zero-variance columns, StandardScaler normalization, validation AUC early stopping; tried batch normalization, 3-5 hidden layers, dropout rates, learning rates, and validation-loss early stopping; no CV, only `validation_split` |
+| Neural Network with Dropout and mini-batches | 0.80214 | 0.81852 | 0.81390 | Two hidden layers, 0.5 dropout, learning rate 0.00005, 10:1 class weighting, 100 epochs, batch size 50; removed zero-variance columns, StandardScaler normalization, validation AUC early stopping; tried batch normalization, 3-5 hidden layers, dropout rates, learning rates, and validation-loss early stopping; `validation_split=0.2` (not 5-fold CV; not directly comparable to OOF AUC of other models) |
 | Logistic Regression | 0.79668 | 0.77733 | 0.79484 | Baseline |
 | ExtraTrees | 0.78230 | 0.76378 | 0.78118 | Baseline |
 
@@ -110,7 +112,7 @@ low-risk post-processing.
 | `results/archive_submissions/` | Older experiment submissions kept for traceability |
 | `results/experiment_logs/` | Experiment summaries, details JSON, and archived outputs |
 | `results/figures/` | EDA and feature-analysis figures |
-| `results/kaggle_screenshot/` | Placeholder for the best Kaggle leaderboard screenshot |
+| `results/kaggle_screenshot/` | Best Kaggle leaderboard screenshot |
 
 ## Final 4-Rule Post-Processing
 
