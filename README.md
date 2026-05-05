@@ -8,7 +8,7 @@ the evaluation metric is ROC AUC.
 
 Final model: **Stacked Ensemble + Rank Average + 4-rule post-processing**
 
-| Model | Private AUC | Public AUC | OOF AUC | Notes |
+| Model | Private AUC | Public AUC | OOF / Validation AUC | Notes |
 |---|---:|---:|---:|---|
 | Final: Stacked Ensemble + Rank Avg + 4-rule | 0.82642 | 0.84030 | 0.84045 | OOF inherited from Austin's base stacking; no separate CV was run for the post-hoc rank averaging and 4-rule test-prediction transformation |
 | Stacked Ensemble | 0.82606 | 0.84001 | 0.84045 | XGBoost + LightGBM + CatBoost with logistic-regression stacking |
@@ -16,6 +16,7 @@ Final model: **Stacked Ensemble + Rank Average + 4-rule post-processing**
 | LightGBM FE | 0.82392 | 0.83777 | 0.83825 | Activity/var38 FE |
 | Base LightGBM | 0.82311 | 0.83706 | 0.83749 | Baseline tree model |
 | Random Forest | 0.81883 | 0.80502 | 0.82093 | Baseline |
+| Neural Network with Dropout and mini-batches | 0.80214 | 0.81852 | 0.81390 | Two hidden layers, 0.5 dropout, learning rate 0.00005, 10:1 class weighting, 100 epochs, batch size 50; removed zero-variance columns, StandardScaler normalization, validation AUC early stopping; tried batch normalization, 3-5 hidden layers, dropout rates, learning rates, and validation-loss early stopping; no CV, only `validation_split` |
 | Logistic Regression | 0.79668 | 0.77733 | 0.79484 | Baseline |
 | ExtraTrees | 0.78230 | 0.76378 | 0.78118 | Baseline |
 
