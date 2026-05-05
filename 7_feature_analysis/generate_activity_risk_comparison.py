@@ -4,8 +4,8 @@ import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path(__file__).resolve().parent
-OUT_DIR = ROOT / "分析importance"
+ROOT = Path(__file__).resolve().parents[1]
+OUT_DIR = ROOT / "results" / "reports" / "analysis_importance_legacy"
 TRAIN_PATH = ROOT / "train_clean.csv"
 PNG_PATH = OUT_DIR / "activity_risk_comparison.png"
 CSV_PATH = OUT_DIR / "activity_risk_comparison.csv"

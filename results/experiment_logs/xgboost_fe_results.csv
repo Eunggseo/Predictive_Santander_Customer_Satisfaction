@@ -1,3 +1,3 @@
-Model,Owner,Private Score,Public Score,OOF AUC,Hyperparameters,Notes
-XGBoost FE,Wenyu,0.82533,0.83906,0.83764,same as XGBoost cleaned_v1,"Added zero_count, nonzero_count, var38_log, var38_is_peak"
-XGBoost FE + 4-rule postprocess,Wenyu,?,?,0.83792,same as XGBoost FE; set 4-rule low-risk test predictions to 0,"4-rule low-risk post-processing. Rule union n=1,807 in train, TARGET=1 count=0. Improved XGBoost FE OOF AUC from 0.837639 to 0.837924 (+0.000285)."
+Model,Private Score,Public Score,OOF AUC,Hyperparameters,Notes
+XGBoost FE,0.82533,0.83906,0.83764,same as XGBoost cleaned_v1,"Added zero_count, nonzero_count, var38_log, var38_is_peak"
+XGBoost FE + 4-rule postprocess,?,?,0.83792,same as XGBoost FE; set 4-rule low-risk test predictions to 0,"4-rule low-risk post-processing. Rule union n=1,807 in train, TARGET=1 count=0. Improved XGBoost FE OOF AUC from 0.837639 to 0.837924 (+0.000285)."

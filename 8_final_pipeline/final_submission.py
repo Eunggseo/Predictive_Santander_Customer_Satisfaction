@@ -3,7 +3,7 @@ Final Santander submission pipeline.
 
 Reproduces the final Private AUC 0.82642 submission:
 1. Austin stacked ensemble submission (Private 0.82606)
-2. Wenyu XGBoost FE + validated 4-rule submission
+2. XGBoost FE + validated 4-rule submission
 3. Rank-average both prediction files
 4. Apply the final validated 4-rule low-risk post-processing
 

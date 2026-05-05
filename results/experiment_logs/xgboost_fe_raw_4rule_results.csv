@@ -1,2 +1,2 @@
-Model,Owner,Private Score,Public Score,OOF AUC before,OOF AUC after,OOF delta,train_rule_n,train_rule_target_sum,test_rule_n,submission,Notes
-XGBoost FE raw + 4-rule postprocess,Wenyu,?,?,0.837772,0.838054,0.000282,1807,0,1811,submission_xgboost_fe_raw_4rule_postprocess.csv,"Raw train/test with zero_count, nonzero_count, var38_log, var38_is_peak; set 4-rule low-risk predictions to 0."
+Model,Private Score,Public Score,OOF AUC before,OOF AUC after,OOF delta,train_rule_n,train_rule_target_sum,test_rule_n,submission,Notes
+XGBoost FE raw + 4-rule postprocess,?,?,0.837772,0.838054,0.000282,1807,0,1811,submission_xgboost_fe_raw_4rule_postprocess.csv,"Raw train/test with zero_count, nonzero_count, var38_log, var38_is_peak; set 4-rule low-risk predictions to 0."

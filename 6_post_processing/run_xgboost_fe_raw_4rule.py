@@ -150,7 +150,6 @@ def main() -> None:
 
     result = {
         "Model": "XGBoost FE raw + 4-rule postprocess",
-        "Owner": "Wenyu",
         "Private Score": "?",
         "Public Score": "?",
         "OOF AUC before": round(oof_auc, 6),

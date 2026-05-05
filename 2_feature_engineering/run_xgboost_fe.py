@@ -107,7 +107,6 @@ def main() -> None:
         [
             {
                 "Model": "XGBoost FE",
-                "Owner": "Wenyu",
                 "Private Score": "?",
                 "Public Score": "?",
                 "OOF AUC": round(oof_auc, 5),

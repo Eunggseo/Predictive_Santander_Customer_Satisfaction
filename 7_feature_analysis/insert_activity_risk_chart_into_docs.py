@@ -7,22 +7,12 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, Pt
 
 
-ROOT = Path(__file__).resolve().parent
-OUT_DIR = ROOT / "分析importance"
+ROOT = Path(__file__).resolve().parents[1]
+OUT_DIR = ROOT / "results" / "reports" / "analysis_importance_legacy"
 CHART_PATH = OUT_DIR / "activity_risk_comparison.png"
 
 
 DOCS = [
-    {
-        "path": OUT_DIR / "Feature_Importance_Business_Insights_ZH.docx",
-        "anchor": "业务解读:没有持有这个核心银行产品的客户是流失风险的主力军",
-        "heading": "补充图 —— 低活跃、零余额、未持有 ind_var30 的风险对比",
-        "caption": (
-            "三种独立分析收敛到同一个约 2 万人的客户切片：Q1 lowest activity、"
-            "saldo_var30 <= 0、ind_var30 == 0 的不满意率都约为整体平均水平的 2.2 倍。"
-            "这说明低活跃、零/负余额、未持有 ind_var30 对应产品本质上是在验证同一类可行动的高风险客户。"
-        ),
-    },
     {
         "path": OUT_DIR / "Feature_Importance_Business_Insights_EN.docx",
         "anchor": "Business interpretation: customers who do not hold this core banking product",
@@ -78,8 +68,6 @@ def update_docx(doc_info: dict) -> None:
             if (
                 "This chart compares Austin" in paragraph.text
                 or "Three independent analyses converge" in paragraph.text
-                or "这张图把 Austin" in paragraph.text
-                or "三种独立分析收敛" in paragraph.text
             ):
                 paragraph.text = doc_info["caption"]
                 for run in paragraph.runs:
