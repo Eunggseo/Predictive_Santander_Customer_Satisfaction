@@ -13,6 +13,7 @@ from xgboost import XGBClassifier
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "2_feature_engineering"))
+OUT_DIR = Path(__file__).resolve().parent
 
 from run_xgboost_fe import RNG_SEED, add_fe
 
@@ -54,7 +55,9 @@ def main() -> None:
     importance["gain_pct"] = importance["gain"] / importance["gain"].sum()
 
     top20 = importance.head(20).copy()
-    top20.to_csv("xgboost_fe_top20_feature_importance.csv", index=False)
+    csv_path = OUT_DIR / "xgboost_fe_top20_feature_importance.csv"
+    png_path = OUT_DIR / "xgboost_fe_top20_feature_importance.png"
+    top20.to_csv(csv_path, index=False)
 
     plot_df = top20.sort_values("gain", ascending=True)
     plt.figure(figsize=(10, 7))
@@ -63,11 +66,11 @@ def main() -> None:
     plt.xlabel("Average gain")
     plt.ylabel("Feature")
     plt.tight_layout()
-    plt.savefig("xgboost_fe_top20_feature_importance.png", dpi=200)
+    plt.savefig(png_path, dpi=200)
     plt.close()
 
-    print("Saved: xgboost_fe_top20_feature_importance.csv")
-    print("Saved: xgboost_fe_top20_feature_importance.png")
+    print(f"Saved: {csv_path}")
+    print(f"Saved: {png_path}")
     print(top20.to_string(index=False))
 
 

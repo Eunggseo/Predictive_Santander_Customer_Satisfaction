@@ -79,26 +79,16 @@ low-risk post-processing.
 │   ├── run_lightgbm_basic_4rule.py
 │   └── blend_best_with_basic_xgb5seed_4rule.py
 ├── 7_feature_analysis/
-│   ├── generate_xgboost_fe_feature_importance.py
-│   ├── generate_activity_risk_comparison.py
-│   ├── insert_activity_risk_chart_into_docs.py
-│   ├── xgboost_fe_top20_feature_importance.csv
-│   └── xgboost_fe_top20_feature_importance.png
+│   ├── feature_importance_gain.py
+│   └── shap_analysis.ipynb
 ├── 8_final_pipeline/
 │   └── final_submission.py
-├── Feature_Analysis/
-│   ├── README.md
-│   ├── report/
-│   ├── shap/
-│   └── business_analysis/
 └── results/
     ├── submissions/
     ├── oof_predictions/
     ├── archive_submissions/
     ├── experiment_logs/
     ├── figures/
-    ├── reports/
-    ├── presentation/
     └── kaggle_screenshot/
 ```
 
@@ -112,9 +102,8 @@ low-risk post-processing.
 | `4_imbalance_handling/` | LightGBM FE and `scale_pos_weight` experiments |
 | `5_ensemble/` | Stacking notebook and rank/blend ensemble scripts |
 | `6_post_processing/` | Final 4-rule validation and post-processing scripts |
-| `7_feature_analysis/` | XGBoost gain feature importance and EDA/business figures |
+| `7_feature_analysis/` | Gain-based feature importance script and SHAP/business analysis notebook |
 | `8_final_pipeline/` | Final reproducible submission script |
-| `Feature_Analysis/` | SHAP and business feature-analysis report |
 | `results/submissions/` | Key final submissions used by the final pipeline |
 | `results/oof_predictions/` | Key OOF prediction files for validation |
 | `results/archive_submissions/` | Older experiment submissions kept for traceability |
