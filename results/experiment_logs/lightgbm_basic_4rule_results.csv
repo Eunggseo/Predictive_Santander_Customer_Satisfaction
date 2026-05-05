@@ -1,0 +1,2 @@
+Model,FE,OOF AUC before,OOF AUC after,OOF delta,train_rule_n,train_rule_target_sum,test_rule_n,best_params,submission,oof_file
+Base LightGBM + 4-rule postprocess,n_zeros only,0.837485,0.837755,0.000269,1807,0,1811,"{""learning_rate"": 0.03, ""max_depth"": 3, ""n_estimators"": 300, ""num_leaves"": 15}",submission_lightgbm_4rule_postprocess.csv,oof_lightgbm_basic_4rule_check.csv

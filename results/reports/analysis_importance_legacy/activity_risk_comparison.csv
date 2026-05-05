@@ -1,0 +1,5 @@
+segment,definition,customers,unsatisfied_customers,unsatisfied_rate,lift_vs_overall
+Overall baseline,All customers,76020,3008,0.0395685345961589,1.0
+Q1 lowest activity,Q1 lowest activity,19080,1708,0.08951781970649896,2.2623486217048043
+Zero account balance,saldo_var30 <= 0,20430,1807,0.08844836025452765,2.2353205939325775
+No core product holding,ind_var30 == 0,20310,1786,0.0879369768586903,2.222396602658789

@@ -1,0 +1,5 @@
+Model,FE,scale_pos_weight,OOF AUC,Public,Private,Notes
+Base LightGBM,No,1.0,0.83749,0.83706,0.82311,baseline
+LightGBM FE,Yes,1.0,0.83825,0.82392,0.83777,activity + var38
+LightGBM FE weighted,Yes,12.0,0.83866,0.82338,0.83828,medium imbalance
+LightGBM FE weighted,Yes,24.27,0.8383,0.82288,0.83812,full imbalance

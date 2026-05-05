@@ -1,0 +1,26 @@
+[
+  {
+    "scale_pos_weight": 12,
+    "best_params": {
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "n_estimators": 100,
+      "num_leaves": 15
+    },
+    "gridsearch_auc": 0.83893,
+    "oof_auc": 0.83866,
+    "submission": "submission_lightgbm_fe_spw_12.csv"
+  },
+  {
+    "scale_pos_weight": 24.27,
+    "best_params": {
+      "learning_rate": 0.03,
+      "max_depth": 5,
+      "n_estimators": 100,
+      "num_leaves": 15
+    },
+    "gridsearch_auc": 0.83855,
+    "oof_auc": 0.8383,
+    "submission": "submission_lightgbm_fe_spw_24p27.csv"
+  }
+]

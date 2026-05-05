@@ -1,0 +1,15 @@
+{
+  "gridsearch_auc": 0.837667,
+  "best_params": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "n_estimators": 300,
+    "num_leaves": 15
+  },
+  "oof_auc_before": 0.837485,
+  "oof_auc_after": 0.837755,
+  "oof_delta": 0.000269,
+  "train_rule_n": 1807,
+  "train_rule_target_sum": 0,
+  "test_rule_n": 1811
+}
